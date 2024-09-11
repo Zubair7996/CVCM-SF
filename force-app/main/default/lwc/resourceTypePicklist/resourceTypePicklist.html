@@ -1,0 +1,17 @@
+<template>
+    <lightning-input
+        label="Search Consultant"
+        value={searchTerm}
+        onchange={handleSearch}
+        placeholder="Search for a user...">
+    </lightning-input>
+    
+    <template if:true={hasResults}>
+        <lightning-combobox
+            value={value}
+            options={users}
+            placeholder="Select Consultant"
+            onchange={handleSelect}>
+        </lightning-combobox>
+    </template>
+</template>

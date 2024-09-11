@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Opportunity Resources" icon-name="standard:resource_absence">
+        <template if:true={hasResources}>
+            <lightning-datatable
+                key-field="Id"
+                data={opportunityResources}
+                columns={columns}>
+            </lightning-datatable>
+        </template>
+        <template if:true={error}>
+            <p>Error loading resources: {error}</p>
+        </template>
+        <template if:false={hasResources}>
+            <p>No resources found for this Opportunity.</p>
+        </template>
+    </lightning-card>
+</template>
